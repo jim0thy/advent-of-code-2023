@@ -1,5 +1,4 @@
 import { readFileSync } from 'node:fs'
-import { join as joinPath } from 'node:path'
 
 let sum = 0
 const data = readFileSync('inputs/day1.txt', 'utf8')
