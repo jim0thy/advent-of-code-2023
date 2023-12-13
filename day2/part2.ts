@@ -3,9 +3,7 @@ import { readFileSync } from 'node:fs'
 const input = readFileSync('inputs/day2.txt', 'utf8')
 const data = input.split('\n').filter(line => line.length > 0)
 
-let sum = 0;
-
-data.forEach((line: string) => {
+const sum = data.reduce((acc, line) => {
   const game = line.split(': ')
   const gameData = game[1].split('; ')
   const cubes = {
@@ -22,8 +20,7 @@ data.forEach((line: string) => {
     })
   })
 
-  const powers = Object.values(cubes).reduce((acc, val) => acc * val, 1)
-  sum += powers
-});
+  return acc + Object.values(cubes).reduce((powers, val) => powers * val, 1)
+}, 0);
 
 console.log(sum);
