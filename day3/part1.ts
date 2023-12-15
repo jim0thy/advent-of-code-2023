@@ -2,18 +2,6 @@ import { readFileSync } from 'node:fs'
 
 let sum = 0
 const data = readFileSync('inputs/day3.txt', 'utf8')
-// const data =
-//   '467..114..\n' +
-//   '...*......\n' +
-//   '..35..633.\n' +
-//   '......#...\n' +
-//   '617*......\n' +
-//   '.....+.58.\n' +
-//   '..592.....\n' +
-//   '......755.\n' +
-//   '...$.*....\n' +
-//   '.664.598..'
-
 const lines: string[][] = data.split('\n').map((line) => line.split('')).filter(line => line.length > 0)
 
 const isNumber = (n: string): boolean => !Number.isNaN(parseInt(n))
